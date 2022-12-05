@@ -10,7 +10,7 @@ Html과 javascript 또는 Typescript로 작업을 한다면 매번 document에�
 ## React
 
 React는 html 파일에 직접 element들을 생성하지 않는다. 스크립트 파일에서 각 element를 생성하여 html 파일로 불러오는 방식을 사용한다.
-이 방식으로 작업하기 위해서는 **_React-js_**와 **_React-dom_** 이 두 라이브러리를 필수적으로 설치해야한다.<br>
+이 방식으로 작업하기 위해서는 **React-js**와 **React-dom** 이 두 라이브러리를 필수적으로 설치해야한다.<br>
 **react-js는 interactive UI를 만들 수 있도록** 하는 엔진과 같고, **react-dom은 생성된 모든 react element들을 html의 body에 배치할 수 있도록** 해준다.<br><br>
 **_vanilla js에서는 html을 먼저 만들고 그 것을 javascript로 가져와서 html을 수정하는 방식이라면, React-JS에서는 모든 것이 javascript로 시작하고 그 다음에 html이 된다. 따라서 React-JS는 유저에게 보여질 내용을 필요에 맞게 컨드롤할 수 있다는 것이다._**
 
