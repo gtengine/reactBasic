@@ -1,7 +1,17 @@
 <!DOCTYPE html>
 <html>
-  <body></body>
+  <body>
+    <div id="root"></div>
+  </body>
   <script src="https://unpkg.com/react@18.2.0/umd/react.production.min.js"></script>
   <script src="https://unpkg.com/react-dom@18.2.0/umd/react-dom.production.min.js"></script>
-  <script></script>
+  <script>
+    const root = document.getElementById("root");
+    const span = React.createElement(
+      "span",
+      { id: "sexy-span", style: { color: "red" } },
+      "Hello!"
+    );
+    ReactDOM.render(span, root);
+  </script>
 </html>
