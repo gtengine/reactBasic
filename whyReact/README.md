@@ -21,11 +21,13 @@ React는 html 파일에 직접 element들을 생성하지 않는다. 스크립�
 ### JSX
 
 JSX는 javascript를 확장한 문법이다. 기본적으로 [useReact.html](https://github.com/gtengine/reactBasic/blob/main/whyReact/useReact.html) 예제에서처럼 React element들을 생성할 수 있도록 한다. 하지만 코딩 방식이 html 문법과 비슷하기 때문에 [useJsx.html](https://github.com/gtengine/reactBasic/blob/main/whyReact/useJsx.html) 더 편하게 작업할 수 있다.<br>
-jsx를 사용하기 위해서는 html 코드를 javascript 코드로 변환해주는 transcompiler가 필요하다. 예제에서는 babel을 사용했다.<br><br>
+jsx를 사용하기 위해서는 html 코드를 javascript 코드로 변환해주는 `transcompiler`가 필요하다. 예제에서는 babel을 사용했다.<br><br>
 **_jsx 문법으로 컴포넌트를 생성할 때에는 변수 선언이 아닌 함수 선언으로 하여, 첫 글자는 대문자로 만들어야한다._**<br><br>
 함수로 생성하는 이유는 모든 컴포넌트들을 감싸고 있는 컨테이너 안에 각 컴포넌트들을 html 문법과 같이 레이어 구조로 쌓아서 렌더링하기 위함이고, 첫 글자를 대문자로 하는 이유는 소문자로 컴포넌트의 이름을 생성하면 React와 JSX는 이 컴포넌트가 html의 tag라고 인식하기 때문에 에러가 발생하기 때문이다.
 
 ### State
 
-페이지 내에서 어떤 액션이나 기능에 의해 변경되는 값을 UI에 반영하기 위해서는 렌더링을 다시 해줘야 한다. 따라서 값이 바뀌는 이벤트가 있을 때마다 계속 렌더링을 호출해야한다는 것인데 이렇게 되면 굉장히 비효율적이다. 이를 해결할 수 있는 방법이 **state**이다.<br><br>
-[state.html](https://github.com/gtengine/reactBasic/blob/main/whyReact/state.html)의 `counter`와 `setCounter`처럼 **_state는 현재 값을 출력하는 getter와 현재 값에서 변경되는 값으로 업데이트를 해주는 setter가 배열로 이루어져 있다. 또한 state 생성 시에 초기값을 설정해줄 수 있기 때문에 초기값에서 업데이트되는 값을 setter에 넣어주고 getter로 출력하면 값이 변경될 때 알아서 자신이 속해있는 컴포넌트를 re-rendering을 하며 UI에 반영할 수 있다._**
+페이지 내에서 어떤 액션이나 기능에 의해 변경되는 값을 UI에 반영하기 위해서는 렌더링을 다시 해줘야 한다. 따라서 값이 바뀌는 이벤트가 있을 때마다 계속 `ReactDOM.render()` 함수를 호출해야한다는 것인데 이렇게 되면 굉장히 비효율적이다. 이를 해결할 수 있는 방법이 **state**이다.<br><br>
+[state.html](https://github.com/gtengine/reactBasic/blob/main/whyReact/state.html)에서처럼 **_state는 현재 값을 출력하는 getter와 현재 값에서 변경되는 값으로 업데이트를 해주는 setter가 배열로 이루어져 있다. 또한 state 생성 시에 초기값을 설정해줄 수 있기 때문에 초기값에서 업데이트되는 값을 setter에 넣어주고 getter로 출력하면 값이 변경될 때 알아서 자신이 속해있는 컴포넌트를 re-rendering을 하며 값이 바뀐 부분만 수정하여 UI에 반영할 수 있다._**
+
+_※ 직접 state의 값을 직접 변경하는 것보다 함수를 활용해 계산하는 것이 더 안전하다._
