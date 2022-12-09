@@ -58,8 +58,8 @@
       );
     };
     const KilometersToMiles = () => {
-      const [distance, setDistance] = React.useState();
-      const [invert, setInvert] = React.useState(false);
+      const [distance, setDistance] = React.useState(); // [getter, setter]
+      const [invert, setInvert] = React.useState(false); // 초기값: false
 
       const onChange = (event) => {
         setDistance(event.target.value);
@@ -80,7 +80,7 @@
               id="km"
               placeholder="Kilometers"
               type="number"
-              onChange={onChange}
+              onChange={onChange} // 입력받는 값을 state의 값으로 저장
               value={invert ? distance / 0.6214 : distance}
               disabled={invert}
             />
