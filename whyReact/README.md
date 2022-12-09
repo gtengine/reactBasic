@@ -42,9 +42,9 @@ Props는 **부모 컴포넌트로부터 자식 컴포넌트에 데이터를 보�
 
 #### Prop Types
 
-Props를 다룰 때 주의해야할 점 중 하나가 입력받는 props의 type이다. 예를 들어, string을 받아야하는 props에 number가 입력되거나, 꼭 필요한 값이 입력되지 않는다면 제대로 작동할 수가 없을 것이다. 이를 해결하기 위해서 **_props의 input type을 미리 선언해 놓고, 필수값 체크를 하거나 지정된 type이 아닌 다른 type의 값이 들어올 경우 에러를 발생시켜 미연에 방지할 수 있다._**
+Props를 다룰 때 주의해야할 점 중 하나가 입력받는 props의 type이다. 예를 들어, string을 받아야하는 props에 number가 입력되거나, 꼭 필요한 값이 입력되지 않는다면 제대로 작동할 수가 없을 것이다. 이를 해결하기 위해서 **_props의 type을 미리 선언하여, 필수값 체크를 하거나 지정된 type이 아닌 다른 type의 값이 들어올 경우 에러를 발생시켜 미연에 방지할 수 있다._**
 
 ### Memo
 
-State의 값이 변경될 때마다 그 state가 속한 컴포넌트는 re-rendering이 된다고 했다. 그러나 부모 컴포넌트에 속해있는 자식 컴포넌트들 중 하나에서 텍스트가 조금 바뀌는 정도로 그 부모 컴포넌트 전체가 re-rendering 된다고 생각하면 너무 비효율적이지 않을 수 없다. 이 문제가 추후 어플리케이션이 느려지는 원인이 될 수도 있다. 이런 상황을 해결하기 위한 기능이 `React.memo()`이다.<br><br>
-[props.html](https://github.com/gtengine/reactBasic/blob/main/whyReact/props.html)에서 처럼 `React.memo()`에 인자로 컴포넌트의 이름을 넣어주고 생성하여 사용하면 **_React가 컴포넌트의 변경여부를 판단하여 변경되지 않는다면 re-rendering하지 않는다._**
+State의 값이 변경될 때마다 그 state가 속한 컴포넌트는 re-rendering 된다고 했다. 그러나 부모 컴포넌트에 속해있는 자식 컴포넌트들 중 하나에서 텍스트가 조금 바뀌는 정도로 그 부모 컴포넌트 전체가 re-rendering 된다고 생각하면 너무 비효율적이지 않을 수 없다. 이 문제가 추후 어플리케이션이 느려지는 원인이 될 수도 있다. 이런 상황을 해결하기 위한 기능이 `React.memo()`이다.<br><br>
+[props.html](https://github.com/gtengine/reactBasic/blob/main/whyReact/props.html)에서 처럼 `React.memo()`에 인자로 컴포넌트의 이름을 넣어주고 생성하여 사용하면 **_React가 컴포넌트의 변경여부를 판단하여 변경되지 않았다면 re-rendering하지 않는다._**
