@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <div id="root"></div>
+  </body>
+  <script
+    crossorigin
+    src="https://unpkg.com/react@17.0.2/umd/react.development.js"
+  ></script>
+  <script
+    crossorigin
+    src="https://unpkg.com/react-dom@17.0.2/umd/react-dom.development.js"
+  ></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script src="https://unpkg.com/prop-types@15.7.2/prop-types.js"></script>
+  <script type="text/babel">
+    const Root = document.getElementById("root");
+    const Button = ({ title, changeValue, fontSize = 16 }) => {
+      console.log(`${title} was rendered`);
+      return (
+        <button
+          style={{
+            backgroundColor: "blue",
+            color: "white",
+            padding: "10px 20px",
+            border: "none",
+            borderRadius: 10,
+            fontSize: fontSize,
+          }}
+          onClick={changeValue}
+        >
+          {title}
+        </button>
+      );
+    };
+    const MemorizedButton = React.memo(Button);
+    MemorizedButton.propTypes = {
+      title: PropTypes.string.isRequired,
+      fontSize: PropTypes.number,
+    };
+    const App = () => {
+      const [value, setValue] = React.useState("Save Changes");
+      const changeValue = () => {
+        setValue("Revert Changes");
+      };
+      return (
+        <div>
+          <MemorizedButton
+            title={value}
+            changeValue={changeValue}
+            fontSize={18}
+          />
+          <MemorizedButton title="Confirm" />
+        </div>
+      );
+    };
+    ReactDOM.render(<App />, Root);
+  </script>
+</html>
