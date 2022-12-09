@@ -30,7 +30,7 @@ jsx를 사용하기 위해서는 html 코드를 javascript 코드로 변환해�
 페이지 내에서 어떤 액션이나 기능에 의해 변경되는 값을 UI에 반영하기 위해서는 렌더링을 다시 해줘야 한다. 따라서 값이 바뀌는 이벤트가 있을 때마다 계속 `ReactDOM.render()` 함수를 호출해야한다는 것인데 이렇게 되면 굉장히 비효율적이다. 이를 효율적으로 해결할 수 있는 방법이 **state**이다.<br><br>
 [state.html](https://github.com/gtengine/reactBasic/blob/main/whyReact/state.html)에서처럼 **_state는 현재 값을 출력하는 getter와 현재 값에서 변경되는 값으로 업데이트를 해주는 setter가 배열로 이루어져 있다. 또한 state 생성 시에 초기값을 설정해줄 수 있기 때문에 초기값에서 업데이트되는 값을 setter에 넣어주고 getter로 출력하면 값이 변경될 때 알아서 자신이 속해있는 컴포넌트를 re-rendering을 하며 값이 바뀐 부분만 수정하여 UI에 반영할 수 있다._**
 
-<center><img src="/images/state.png" width='50%' height='60%'></center>
+<center><img src="./images/state.png" width='50%' height='60%'></center>
 
 _※ 직접 state의 값을 직접 변경하는 것보다 함수를 활용해 계산하는 것이 더 안전하다._
 
