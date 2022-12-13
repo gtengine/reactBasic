@@ -34,7 +34,7 @@ yarn create react-app project-name
 
 ## 파일 설정
 
-기본으로 생성된 파일들 중 _logo.svg, reportWebVitals.js, setupTest.js, App.css, App.test.js, index.css는 필요가 없으니 삭제해주도록하자._<br><br>
+기본으로 생성된 파일들 중 _logo.svg, reportWebVitals.js, setupTest.js, App.css, App.test.js, index.css는 필요가 없으니 삭제해주도록하자._
 
 ## Create Component
 
@@ -45,3 +45,7 @@ yarn create react-app project-name
 각 컴포넌트에 대해 서로 다른 스타일을 적용하고 싶을 것이다. 예를 들어, 모든 버튼이 똑같이 생겼다면 UI 적으로도, UX 적으로도 너무 좋지 않은 페이지가 될 것이다. 그럴 경우에 `name.module.css` 파일을 만들어 css 문법으로 각각의 컴포넌트에 주고 싶은 스타일을 _className_ 미리 만들고, 적용할 컴포넌트에 import하여 `className={styles.className}`으로 불러오면 서로 다른 스타일을 적용할 수 있다.
 
 _※ 만약 같은 스타일을 적용하고 싶은 컴포넌트가 있다고 했을 때, className으로 스타일을 적용하고 있어서 같은 className을 사용해도 되는지 걱정된다면 그럴 필요는 없다. 같은 스타일을 가진 className을 여러 컴포넌트에서 중복 사용했어도 react가 알아서 랜덤한 class로 compile하여 브라우저에 전송하기 때문에 서로 다른 class를 가지고 있기 때문이다._
+
+## Effect
+
+`state`가 변화할 때 그 `state`가 속한 `component`는 다시 실행되고 그 안의 모든 코드도 다시 실행된다고 했었다. 이 원리로 변화된 값을 브라우저에 반영하는 것이다. 그러나 `component` 안의 어떤 코드는 다시 실행되는 것이 불필요한 동작일 수 있을 것이다. 이를 해결하기 위한 것이 **_Effect_**이다.
