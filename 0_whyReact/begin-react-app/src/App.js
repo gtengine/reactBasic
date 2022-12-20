@@ -17,10 +17,15 @@ const App = () => {
     console.log("I run only once.");
   };
 
+  // 한 번만 실행
   useEffect(iRunOnlyOnce, []);
+
+  // searchWord가 변할 때만 실행
   useEffect(() => {
     console.log("SEARCH FOR", searchWord);
   }, [searchWord]);
+
+  // counter 또는 searchWord가 변할 때만 실행
   useEffect(() => {
     console.log("I run when both change.");
   }, [counter, searchWord]);
