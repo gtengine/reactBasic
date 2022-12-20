@@ -1,6 +1,8 @@
 import Button from "./Button";
 import styles from "./App.module.css";
 import React, { useEffect, useState } from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import CleanUp from "./claenUp";
 
 const App = () => {
   const [counter, setCounter] = useState(0);
@@ -39,6 +41,11 @@ const App = () => {
       />
       <h1 className={styles.title}>{counter}</h1>
       <Button text="Click me" onClick={onClickHandler} />
+      <BrowserRouter>
+        <Routes>
+          <Route path="/cleanup" element={<CleanUp />}></Route>
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 };
