@@ -1,3 +1,3 @@
 # reactBasic
 
-# React 기초 공부
+## react에서 사용되는 기본 개념
